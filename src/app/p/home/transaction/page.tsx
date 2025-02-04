@@ -1,20 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronRightIcon } from "lucide-react";
 
 export default function TransactionList() {
-  useEffect(() => {
-    // Get user data from localStorage
-    const userData = localStorage.getItem("userData");
-    if (userData) {
-      const { fullName } = JSON.parse(userData);
-      const firstName = fullName.split(" ")[0];
-    }
-
-    return () => {};
-  }, []);
 
   return (
     <div className="overflow-scroll py-10">
@@ -25,6 +14,7 @@ export default function TransactionList() {
 
         {Array.from({ length: 15 }).map((_, index) => (
           <Link
+          key={index}
             href={"/p/home/transaction/proof"}
             className="flex flex-row gap-4 justify-between"
           >

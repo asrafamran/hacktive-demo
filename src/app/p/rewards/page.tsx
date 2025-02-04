@@ -163,7 +163,7 @@ const Page = () => {
     return (
         <div className="overflow-scroll py-10 px-4 mb-[80px]">
             <div
-                className="flex flex-col justify-center items-center relative h-[200px] border-2 border-gray-300 rounded-lg p-4"
+                className="flex flex-col justify-center items-center relative h-fit border-2 border-gray-300 rounded-lg p-4"
             >
                 {/* Background overlay with reduced opacity */}
                 <div
@@ -186,6 +186,18 @@ const Page = () => {
                     You are <span className="italic font-normal">50 points</span> away from
                     unlocking GUARDIAN!
                 </p>
+
+                <div className="text-left text-sm font-semibold py-4 relative z-10 w-full">
+                    <p>Tier Journey</p>
+                    <div className="flex gap-2">
+                        <Image src={B1} alt="B1" className="w-[50px]" />
+                        <Image src={G1} alt="G1" className="w-[50px] grayscale" />
+                        <Image src={P1} alt="P1" className="w-[65px] grayscale" />
+                        <Image src={S1} alt="S1" className="w-[65px] grayscale" />
+                        <Image src={A1} alt="A1" className="w-[65px] grayscale" />
+                    </div>
+
+                </div>
             </div>
 
             <div className="pt-4 flex flex-col gap-4">
@@ -193,7 +205,7 @@ const Page = () => {
                     tiers.map((tier, index) => (
                         <div key={index}>
                             <div className="flex items-center gap-2">
-                                <Image src={tier.image} alt={tier.ranking} className="max-w-[40px]" />
+                                <Image src={tier.image} alt={tier.ranking} className={`max-w-[40px]  ${tier.ranking !== "Bedrock" && "grayscale"}`} />
                                 <p className="text-sm font-semibold">{tier.ranking}</p>
                             </div>
                             <div className="pt-2 flex gap-3">
@@ -202,7 +214,7 @@ const Page = () => {
                                         <div key={i} className="bg-[#F8F5FC] flex-1 flex flex-col items-center justify-center rounded-lg w-[90px] py-2 px-4">
                                             <Link href={`/p/products/${index}/${product.id}`} className="flex flex-col items-center">
 
-                                                <Image src={product.image} alt={product.name} className="w-[32px]" />
+                                                <Image src={product.image} alt={product.name} className={`w-[32px]`} />
                                                 <p className="text-[10px] text-center text-wrap">{product.name}</p>
                                             </Link>
                                         </div>

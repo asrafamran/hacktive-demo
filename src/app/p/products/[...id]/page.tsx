@@ -172,35 +172,51 @@ const page = ({ params }: { params: { id: string } }) => {
                 </div>
                 <div className='bg-pink-200 rounded-2xl p-4 text-sm'>
                     <p className='font-bold'>Requirements</p>
-                    <div className='px-4 pt-4 flex items-center gap-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 text-green-600">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                        <p>Achieved {product.amountDuration}-months streak minimum income RM{product.salaryAmount} </p>
-                    </div>
-                    <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                        <p>GigTrust metric score {'>'} {product.trustMetricsScoreMin} </p>
-                    </div>
+                    {
+                        product.name !== 'Tabung' && (
+                            <div className='px-4 pt-4 flex items-center gap-2'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 text-green-600">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <p>Achieved {product.amountDuration}-months streak minimum income RM{product.salaryAmount} </p>
+                            </div>
+                        )
+                    }
+
+                    {
+                        product.name !== 'Tabung' && (
+                            <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <p>GigTrust metric score {'>'} {product.trustMetricsScoreMin} </p>
+                            </div>
+                        )
+                    }
+
                     <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
                         <p>Achieved {product.amountDuration}-months streak monthly contribution in Tabung</p>
                     </div>
-                    <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                        <p>Subscribe takaful/microtakaful for {product.amountDuration} months consecutively </p>
-                    </div>
+
+                    {
+                        product.name !== 'Tabung' && (
+                            <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <p>Subscribe takaful/microtakaful for {product.amountDuration} months consecutively </p>
+                            </div>
+                        )
+                    }
+
 
                 </div>
 
                 <div className=' mt-4'>
-                    <button className='bg-[#7A3497] text-white px-4 py-1 w-full rounded-full disabled:bg-purple-300' disabled>
+                    <button className='bg-[#7A3497] text-white px-4 py-2 w-full rounded-full disabled:bg-purple-300' disabled>
                         Apply Now
                     </button>
                 </div>

@@ -1,23 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { ChevronRightIcon } from "lucide-react";
-import backgroundImage from "@/public/background.png";
 
 export default function TransactionList() {
-  useEffect(() => {
-    // Get user data from localStorage
-    const userData = localStorage.getItem("userData");
-    if (userData) {
-      const { fullName } = JSON.parse(userData);
-      const firstName = fullName.split(" ")[0];
-    }
-
-    return () => {};
-  }, []);
-
+  
   return (
     <div className="overflow-scroll">
       {/* <div className="fixed inset-0 z-10">
