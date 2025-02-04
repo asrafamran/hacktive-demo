@@ -160,7 +160,7 @@ const page = ({ params }: { params: { id: string } }) => {
     const product = tiers[parseInt(params.id[0])].products.filter(productItem => productItem.id === parseInt(params.id[1]))[0]
 
     return (
-        <div className='bg-gradient-to-r from-blue-200 to-blue-500 h-full flex flex-col'>
+        <div className='bg-gradient-to-r from-blue-200 to-blue-500 h-full flex flex-col overflow-scroll mb-[80px]'>
             <div className='flex justify-center items-center h-56'>
                 <h2 className='text-3xl font-bold'>{product.name}</h2>
 

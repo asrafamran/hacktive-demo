@@ -31,7 +31,7 @@ const tiers = [
         ]
     },
     {
-        ranking: "Guadrian",
+        ranking: "Guardian",
         image: G1,
         products: [
             {
