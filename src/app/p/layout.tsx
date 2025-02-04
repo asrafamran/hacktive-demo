@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
 import Navbar from "@/components/Navbar";
 import backgroundImage from "@/public/background.png"
 import Image from "next/image";

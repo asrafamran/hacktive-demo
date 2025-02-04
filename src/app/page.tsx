@@ -1,5 +1,6 @@
 import Image from "next/image";
 import backgroundImage from "@/public/background.png"
+import Link from "next/link";
 
 
 export default function Home() {
@@ -30,12 +31,17 @@ export default function Home() {
         {/* Login */}
         <div className=" mt-48">
           <div className="bg-[#7A3497] px-8 py-2 rounded-lg">
-            <p className=" text-gray-100 text-sm">Login with Biometric</p>
+            <Link href="/onboarding/register">
+              <p className=" text-gray-100 text-sm">Login with Biometric</p>
+            </Link>
           </div>
           <div className="pt-6 text-center text-sm">
 
             <p>No account yet?</p>
-            <p className="font-bold text-[#7A3497]">Get Started</p>
+            <Link href={"/onboarding/register"}>
+              <p className="font-bold text-[#7A3497]">Get Started</p>
+            </Link>
+
           </div>
         </div>
       </div>

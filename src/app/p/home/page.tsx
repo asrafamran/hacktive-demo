@@ -1,3 +1,7 @@
+"use client"
+
+import { useState, useEffect } from "react";
+
 import product from "@/public/product.png";
 import rewards from "@/public/rewards.png";
 import tabung from "@/public/tabung.png";
@@ -28,13 +32,32 @@ const Products = [
 
 
 export default function Home() {
+
+  const [userName, setUserName] = useState("");
+
+
+  useEffect(() => {
+    // Get user data from localStorage
+    const userData = localStorage.getItem('userData')
+    if (userData) {
+      const { fullName } = JSON.parse(userData)
+      const firstName = fullName.split(' ')[0]
+      setUserName(firstName)
+    }
+
+    return () => {
+    }
+  }, [])
+
+
+
   return (
     <div className="overflow-scroll py-10 px-4">
       <div>
         {/* <Bell /> */}
       </div>
       <div>
-        <p className="text-sm text-gray-700">Peace Be Upon You, Mahmud</p>
+        <p className="text-sm text-gray-700">Peace Be Upon You, {userName}</p>
         <p className="tetx-lg font-bold">RM ***.**</p>
       </div>
 
@@ -46,7 +69,7 @@ export default function Home() {
             <div key={index} className="bg-[#F8F2FB] rounded-lg p-4">
               <div className="flex flex-col gap-2 items-center">
                 <p className="text-sm font-bold">{product.name}</p>
-                <Image src={product.image} alt={product.name} className="max-w-[80px] "/>
+                <Image src={product.image} alt={product.name} className="max-w-[80px] " />
               </div>
             </div>
           ))
