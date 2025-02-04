@@ -1,9 +1,12 @@
-import React from 'react'
+import product_1 from "@/public/Products_1.png";
+import Image from "next/image";
 
 
 const page = () => {
     return (
-        <div>page</div>
+        <div>
+            <Image src={product_1} alt="product_1" />
+        </div>
     )
 }
 
