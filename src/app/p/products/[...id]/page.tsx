@@ -1,6 +1,5 @@
-import React from "react";
-import Image from "next/image";
-import background from "@/public/background_1.png";
+
+import React from 'react'
 
 import B1 from "@/public/ranking/B1.png";
 import G1 from "@/public/ranking/G1.png";
@@ -12,7 +11,7 @@ import tabung from "@/public/tabung.png"
 import car from "@/public/car.png"
 import house from "@/public/house.png"
 import motorbike from "@/public/motor.png"
-import Link from "next/link";
+import Image from 'next/image';
 
 const tiers = [
     {
@@ -21,7 +20,7 @@ const tiers = [
         products: [
             {
                 id: 1,
-                name: "tabung",
+                name: "Tabung",
                 image: tabung,
                 description: "Basic savings account for everyday banking needs",
                 salaryAmount: 1000,
@@ -31,7 +30,7 @@ const tiers = [
         ]
     },
     {
-        ranking: "Guardian",
+        ranking: "Guadrian",
         image: G1,
         products: [
             {
@@ -155,66 +154,63 @@ const tiers = [
     }
 ];
 
+const page = ({ params }: { params: { id: string } }) => {
 
+    const ranking = tiers[parseInt(params.id[0])];
+    const product = tiers[parseInt(params.id[0])].products.filter(productItem => productItem.id === parseInt(params.id[1]))[0]
 
-
-
-const Page = () => {
     return (
-        <div className="overflow-scroll py-10 px-4 mb-[80px]">
-            <div
-                className="flex flex-col justify-center items-center relative h-[200px] border-2 border-gray-300 rounded-lg p-4"
-            >
-                {/* Background overlay with reduced opacity */}
-                <div
-                    style={{
-                        backgroundImage: `url(${background.src})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        opacity: 0.8,
-                    }}
-                    className="absolute inset-0 rounded-lg"
-                />
+        <div className='bg-gradient-to-r from-blue-200 to-blue-500 h-full flex flex-col overflow-scroll mb-[80px]'>
+            <div className='flex justify-center items-center h-56'>
+                <h2 className='text-3xl font-bold'>{product.name}</h2>
 
-                {/* Content */}
-                <div className="flex items-center gap-2 relative z-10">
-                    <Image src={B1} alt="B1" className="max-w-[50px] w-auto h-auto" />
-                    <p className="font-bold text-lg">Bedrock</p>
+            </div>
+            <div className='flex flex-col flex-1 bg-white rounded-t-2xl px-6 py-8'>
+                <div className='flex gap-4 items-center h-[80px]'>
+                    <Image src={ranking.image} alt={ranking.ranking} className='max-w-[50px]' />
+                    <p className='bg-gray-200 rounded-lg px-4 py-1 text-gray-700 text-sm font-semibold'>{ranking.ranking}</p>
                 </div>
-                <p className="text-xl font-bold pt-4 relative z-10">150 Points</p>
-                <p className="text-center text-sm max-w-[70%] text-gray-600 font-semibold pt-2 relative z-10">
-                    You are <span className="italic font-normal">50 points</span> away from
-                    unlocking GUARDIAN!
-                </p>
+                <div className='bg-pink-200 rounded-2xl p-4 text-sm'>
+                    <p className='font-bold'>Requirements</p>
+                    <div className='px-4 pt-4 flex items-center gap-2'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 text-green-600">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p>Achieved {product.amountDuration}-months streak minimum income RM{product.salaryAmount} </p>
+                    </div>
+                    <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p>GigTrust metric score {'>'} {product.trustMetricsScoreMin} </p>
+                    </div>
+                    <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p>Achieved {product.amountDuration}-months streak monthly contribution in Tabung</p>
+                    </div>
+                    <div className='px-4 pt-4 flex items-center gap-2 text-gray-400'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p>Subscribe takaful/microtakaful for {product.amountDuration} months consecutively </p>
+                    </div>
+
+                </div>
+
+                <div className=' mt-4'>
+                    <button className='bg-[#7A3497] text-white px-4 py-1 w-full rounded-full disabled:bg-purple-300' disabled>
+                        Apply Now
+                    </button>
+                </div>
             </div>
 
-            <div className="pt-4 flex flex-col gap-4">
-                {
-                    tiers.map((tier, index) => (
-                        <div key={index}>
-                            <div className="flex items-center gap-2">
-                                <Image src={tier.image} alt={tier.ranking} className="max-w-[40px]" />
-                                <p className="text-sm font-semibold">{tier.ranking}</p>
-                            </div>
-                            <div className="pt-2 flex gap-3">
-                                {
-                                    tier.products.map((product, i) => (
-                                        <div key={i} className="bg-[#F8F5FC] flex-1 flex flex-col items-center justify-center rounded-lg w-[90px] py-2 px-4">
-                                            <Link href={`/p/products/${index}/${product.id}`} className="flex flex-col items-center">
 
-                                                <Image src={product.image} alt={product.name} className="w-[32px]" />
-                                                <p className="text-[10px] text-center text-wrap">{product.name}</p>
-                                            </Link>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
+
+
         </div>
-    );
-};
+    )
+}
 
-export default Page;
+export default page
