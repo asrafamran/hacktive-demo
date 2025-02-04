@@ -1,12 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react";
-
-import product from "@/public/product.png";
-import rewards from "@/public/rewards.png";
-import tabung from "@/public/tabung.png";
-import community from "@/public/community.png";
-
 import LevelBadgeCard from "@/components/LevelBadgeCard"
 
 export default function Home() {

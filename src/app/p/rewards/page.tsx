@@ -30,7 +30,7 @@ const tiers = [
                 image: tabung,
             },
             {
-                name: "Cashback",
+                name: "Cashback Voucher",
                 image: tabung,
             },
         ]
@@ -40,11 +40,15 @@ const tiers = [
         image: P1,
         products: [
             {
-                name: "Vehicle Financing",
+                name: "Microtakaful/Takaful",
                 image: tabung,
             },
             {
-                name: "Tabung",
+                name: "Personal Financing",
+                image: tabung,
+            },
+            {
+                name: "Motobike Financing",
                 image: tabung,
             },
         ]
@@ -54,11 +58,15 @@ const tiers = [
         image: S1,
         products: [
             {
-                name: "Vehicle Financing",
+                name: "Motobike Financing",
                 image: tabung,
             },
             {
-                name: "Tabung",
+                name: "Personal Financing",
+                image: tabung,
+            },
+            {
+                name: "Car Financing",
                 image: tabung,
             },
         ]

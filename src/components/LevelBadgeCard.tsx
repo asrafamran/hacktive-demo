@@ -1,7 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react";
-
 import B1 from "@/public/ranking/B1.png";
 import background from "@/public/background_1.png";
 
