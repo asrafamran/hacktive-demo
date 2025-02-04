@@ -23,7 +23,7 @@ const Navbar = () => {
                 <button>
                     <Link href={"/tabung"} className="flex flex-col items-center">
                         <CircleDollarSign className="text-[#7A3497]" />
-                        <span className="text-xs mt-1">Account</span>
+                        <span className="text-xs mt-1">Tabung</span>
                     </Link>
                 </button>
 
