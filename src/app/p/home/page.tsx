@@ -7,31 +7,7 @@ import rewards from "@/public/rewards.png";
 import tabung from "@/public/tabung.png";
 import community from "@/public/community.png";
 
-import Image from "next/image";
-
 import LevelBadgeCard from "@/components/LevelBadgeCard"
-
-
-const Products = [
-  {
-    name: "Products",
-    image: product,
-  },
-  {
-    name: "Tabung",
-    image: rewards,
-  },
-  {
-    name: "Rewards",
-    image: tabung,
-  },
-  {
-    name: "Community",
-    image: community,
-  },
-]
-
-
 
 export default function Home() {
 

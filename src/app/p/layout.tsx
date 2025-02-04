@@ -3,9 +3,6 @@ import Navbar from "@/components/Navbar";
 import backgroundImage from "@/public/background.png"
 import Image from "next/image";
 
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: "GigTrust",
   description: "Bank for the Gigs",

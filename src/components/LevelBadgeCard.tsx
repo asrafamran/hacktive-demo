@@ -15,24 +15,6 @@ export default function LevelBadgeCard({
   children?: React.ReactNode;
 }>) {
 
-  const [userName, setUserName] = useState("");
-
-
-  useEffect(() => {
-    // Get user data from localStorage
-    const userData = localStorage.getItem('userData')
-    if (userData) {
-      const { fullName } = JSON.parse(userData)
-      const firstName = fullName.split(' ')[0]
-      setUserName(firstName)
-    }
-
-    return () => {
-    }
-  }, [])
-
-
-
   return (
     <div className="overflow-scroll py-10 px-4">
       <div
