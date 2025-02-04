@@ -1,59 +1,44 @@
-import product from "@/public/product.png";
-import rewards from "@/public/rewards.png";
-import tabung from "@/public/tabung.png";
-import community from "@/public/community.png";
-
 import Image from "next/image";
-
-
-const Products = [
-  {
-    name: "Products",
-    image: product,
-  },
-  {
-    name: "Tabung",
-    image: rewards,
-  },
-  {
-    name: "Rewards",
-    image: tabung,
-  },
-  {
-    name: "Community",
-    image: community,
-  },
-]
-
+import backgroundImage from "@/public/background.png"
 
 
 export default function Home() {
   return (
-    <div className="overflow-scroll py-10 px-4">
-      <div>
-        {/* <Bell /> */}
-      </div>
-      <div>
-        <p className="text-sm text-gray-700">Peace Be Upon You, Mahmud</p>
-        <p className="tetx-lg font-bold">RM ***.**</p>
+    <div className="overflow-scroll py-10 px-4 h-full">
+      <div className="fixed inset-0 -z-10">
+        <Image src={backgroundImage} className="w-full h-full object-cover" alt="background Image" />
+        {/* Optional overlay for better readability */}
+        <div className="absolute inset-0 bg-black/05" />
       </div>
 
+      <div className="flex flex-col items-center justify-center h-full">
 
-      {/* Products */}
-      <div className="grid grid-cols-2 gap-4 pt-6">
-        {
-          Products.map((product, index) => (
-            <div key={index} className="bg-[#F8F2FB] rounded-lg p-4">
-              <div className="flex flex-col gap-2 items-center">
-                <p className="text-sm font-bold">{product.name}</p>
-                <Image src={product.image} alt={product.name} className="max-w-[80px] "/>
-              </div>
-            </div>
-          ))
-        }
+        <div className="h-[80px] w-[80px] bg-[#AF69CC] rounded-lg mb-8"></div>
 
+
+        <div className="mb-8">
+          <p className="text-center text-sm text-gray-600">Briding the gap between your hustle
+            <br />
+            and you financial goals.
+          </p>
+        </div>
+        <div className="text-center">
+          <h1 className=" text-2xl font-bold">Empowering Your Hustle, <br /> <span className="text-[#7A3497]">Financing Your Future.</span></h1>
+        </div>
+
+
+        {/* Login */}
+        <div className=" mt-48">
+          <div className="bg-[#7A3497] px-8 py-2 rounded-lg">
+            <p className=" text-gray-100 text-sm">Login with Biometric</p>
+          </div>
+          <div className="pt-6 text-center text-sm">
+
+            <p>No account yet?</p>
+            <p className="font-bold text-[#7A3497]">Get Started</p>
+          </div>
+        </div>
       </div>
-
-    </div>
+    </div >
   );
 }

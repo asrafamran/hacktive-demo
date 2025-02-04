@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="max-w-screen-xl mx-auto flex items-center justify-around text-gray-700">
                 {/* Example navigation items */}
                 <button>
-                    <Link href={"/"} className="flex flex-col items-center">
+                    <Link href={"/home"} className="flex flex-col items-center">
                         <House className="text-[#7A3497]" />
                     </Link>
                     <span className="text-xs mt-1">Home</span>
