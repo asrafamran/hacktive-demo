@@ -9,6 +9,8 @@ import community from "@/public/community.png";
 
 import Image from "next/image";
 
+import LevelBadgeCard from "@/components/LevelBadgeCard"
+
 
 const Products = [
   {
@@ -52,29 +54,40 @@ export default function Home() {
 
 
   return (
-    <div className="overflow-scroll py-10 px-4">
-      <div>
-        {/* <Bell /> */}
+    <div className="overflow-scroll py-10">
+      <div className="px-4">
+        <div>
+          {/* <Bell /> */}
+        </div>
+        <div>
+          <p className="text-sm text-gray-700">Peace Be Upon You, {userName}</p>
+          <p className="tetx-lg font-bold">RM ***.**</p>
+        </div>
+
+
+        <LevelBadgeCard />
       </div>
-      <div>
-        <p className="text-sm text-gray-700">Peace Be Upon You, {userName}</p>
-        <p className="tetx-lg font-bold">RM ***.**</p>
-      </div>
 
-
-      {/* Products */}
-      <div className="grid grid-cols-2 gap-4 pt-6">
-        {
-          Products.map((product, index) => (
-            <div key={index} className="bg-[#F8F2FB] rounded-lg p-4">
-              <div className="flex flex-col gap-2 items-center">
-                <p className="text-sm font-bold">{product.name}</p>
-                <Image src={product.image} alt={product.name} className="max-w-[80px] " />
-              </div>
-            </div>
-          ))
-        }
-
+      <div className="flex flex-col gap-7 bg-white rounded-3xl p-6">
+        <p className="font-bold text-lg text-center">Income History</p>
+        <div className="flex flex-row gap-4 justify-between">
+          <div className="w-[42px] h-[42px] bg-purple-200 rounded-full"></div>
+          <div className="flex flex-col gap-1 flex-grow">
+            <p className="text-sm font-semibold uppercase">Shop</p>
+            <p className="text-xs font-semithin">Today</p>
+          </div>
+          <p className="font-bold text-green-600">+ RM 500.00</p>
+        </div>
+      {Array.from({ length: 10 }).map((_, index) => (
+        <div key={index} className="flex flex-row gap-4 justify-between">
+          <div className="w-[42px] h-[42px] bg-purple-200 rounded-full"></div>
+          <div className="flex flex-col gap-1 flex-grow">
+            <p className="text-sm font-semibold uppercase">Shop</p>
+            <p className="text-xs font-semithin">Today</p>
+          </div>
+          <p className="font-bold text-green-600">+ RM 500.00</p>
+        </div>
+      ))}
       </div>
 
     </div>
