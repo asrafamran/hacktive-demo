@@ -1,9 +1,10 @@
-import React from 'react'
+import community_1 from "@/public/Community_1.png";
+import Image from "next/image";
 
 
 const page = () => {
     return (
-        <div>Community</div>
+        <div><Image src={community_1} alt="caomnut" /></div>
     )
 }
 

@@ -211,13 +211,11 @@ const Page = () => {
                             <div className="pt-2 flex gap-3">
                                 {
                                     tier.products.map((product, i) => (
-                                        <div key={i} className="bg-[#F8F5FC] flex-1 flex flex-col items-center justify-center rounded-lg w-[90px] py-2 px-4">
-                                            <Link href={`/p/products/${index}/${product.id}`} className="flex flex-col items-center">
+                                        <Link key={i} href={`/p/products/${index}/${product.id}`} className=" bg-[#F8F5FC] flex-1 flex flex-col items-center justify-center rounded-lg w-[90px] py-2 px-4">
 
-                                                <Image src={product.image} alt={product.name} className={`w-[32px]`} />
-                                                <p className="text-[10px] text-center text-wrap">{product.name}</p>
-                                            </Link>
-                                        </div>
+                                            <Image src={product.image} alt={product.name} className={`w-[32px]`} />
+                                            <p className="text-[10px] text-center text-wrap">{product.name}</p>
+                                        </Link>
                                     ))
                                 }
                             </div>
@@ -225,7 +223,7 @@ const Page = () => {
                     ))
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
