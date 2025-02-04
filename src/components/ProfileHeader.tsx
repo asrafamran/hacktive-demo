@@ -1,8 +1,7 @@
 import React from 'react'
 
-type Props = {}
 
-const ProfileHeader = (props: Props) => {
+const ProfileHeader = () => {
     return (
         <div>ProfileHeader</div>
     )
