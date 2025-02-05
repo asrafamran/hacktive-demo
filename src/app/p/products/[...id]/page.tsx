@@ -25,12 +25,12 @@ const tiers = [
                 description: "Basic savings account for everyday banking needs",
                 salaryAmount: 1000,
                 amountDuration: "3 months",
-                trustMetricsScoreMin: 300
+                trustMetricsScoreMin: 60
             }
         ]
     },
     {
-        ranking: "Guadrian",
+        ranking: "Guardian",
         image: G1,
         products: [
             {
@@ -40,7 +40,7 @@ const tiers = [
                 description: "Earn rewards by referring new customers",
                 salaryAmount: 2000,
                 amountDuration: "6 months",
-                trustMetricsScoreMin: 400
+                trustMetricsScoreMin: 70
             },
             {
                 id: 3,
@@ -49,7 +49,7 @@ const tiers = [
                 description: "Get cashback rewards on your purchases",
                 salaryAmount: 2000,
                 amountDuration: "6 months",
-                trustMetricsScoreMin: 400
+                trustMetricsScoreMin: 70
             }
         ]
     },
@@ -64,7 +64,7 @@ const tiers = [
                 description: "Islamic insurance coverage for your protection",
                 salaryAmount: 3000,
                 amountDuration: "9 months",
-                trustMetricsScoreMin: 500
+                trustMetricsScoreMin: 80
             },
             {
                 id: 5,
@@ -73,16 +73,16 @@ const tiers = [
                 description: "Personal financing solutions for your needs",
                 salaryAmount: 3000,
                 amountDuration: "9 months",
-                trustMetricsScoreMin: 500
+                trustMetricsScoreMin: 80
             },
             {
                 id: 6,
-                name: "Motobike Financing",
+                name: "Motorbike Financing",
                 image: motorbike,
                 description: "Affordable motorcycle financing options",
                 salaryAmount: 3000,
                 amountDuration: "9 months",
-                trustMetricsScoreMin: 500
+                trustMetricsScoreMin: 80
             }
         ]
     },
@@ -92,12 +92,12 @@ const tiers = [
         products: [
             {
                 id: 7,
-                name: "Motobike Financing",
+                name: "Motorbike Financing",
                 image: motorbike,
                 description: "Premium motorcycle financing solutions",
                 salaryAmount: 5000,
                 amountDuration: "12 months",
-                trustMetricsScoreMin: 600
+                trustMetricsScoreMin: 90
             },
             {
                 id: 8,
@@ -106,7 +106,7 @@ const tiers = [
                 description: "Enhanced personal financing packages",
                 salaryAmount: 5000,
                 amountDuration: "12 months",
-                trustMetricsScoreMin: 600
+                trustMetricsScoreMin: 90
             },
             {
                 id: 9,
@@ -115,7 +115,7 @@ const tiers = [
                 description: "Competitive car financing solutions",
                 salaryAmount: 5000,
                 amountDuration: "12 months",
-                trustMetricsScoreMin: 600
+                trustMetricsScoreMin: 90
             }
         ]
     },
@@ -130,7 +130,7 @@ const tiers = [
                 description: "Exclusive motorcycle financing packages",
                 salaryAmount: 8000,
                 amountDuration: "18 months",
-                trustMetricsScoreMin: 700
+                trustMetricsScoreMin: 95
             },
             {
                 id: 11,
@@ -139,7 +139,7 @@ const tiers = [
                 description: "Comprehensive house financing solutions",
                 salaryAmount: 8000,
                 amountDuration: "18 months",
-                trustMetricsScoreMin: 700
+                trustMetricsScoreMin: 95
             },
             {
                 id: 12,
@@ -148,7 +148,7 @@ const tiers = [
                 description: "Business financing for SME growth",
                 salaryAmount: 8000,
                 amountDuration: "18 months",
-                trustMetricsScoreMin: 700
+                trustMetricsScoreMin: 95
             }
         ]
     }
@@ -161,9 +161,9 @@ const page = ({ params }: { params: { id: string } }) => {
 
     return (
         <div className='bg-gradient-to-r from-blue-200 to-blue-500 h-full flex flex-col overflow-scroll mb-[80px]'>
-            <div className='flex justify-center items-center h-56'>
+            <div className='flex flex-col gap-4 justify-center items-center h-56'>
                 <h2 className='text-3xl font-bold'>{product.name}</h2>
-
+                <p className='text-sm text-gray-800 max-w-[70%] text-center'>{product.description}</p>
             </div>
             <div className='flex flex-col flex-1 bg-white rounded-t-2xl px-6 py-8'>
                 <div className='flex gap-4 items-center h-[80px]'>

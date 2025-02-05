@@ -34,10 +34,9 @@ export default function LevelBadgeCard({
           <Image src={B1} alt="B1" className="max-w-[50px] w-auto h-auto" />
           <p className="font-bold text-lg">Bedrock</p>
         </div>
-        <p className="text-xl font-bold pt-4 relative z-10">150 Points</p>
-        <p className="text-center text-sm max-w-[70%] text-gray-600 font-semibold pt-2 relative z-10">
-          You are <span className="italic font-normal">50 points</span> away from
-          unlocking GUARDIAN!
+        <p className="text-xl font-bold pt-4 relative z-10">RM1,859</p>
+        <p className="text-center text-sm max-w-[70%] text-gray-600 pt-2 relative z-10">
+          Average income for the last 6 Months
         </p>
 
         {/* optional children slot */}
